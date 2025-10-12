@@ -1,0 +1,16 @@
+[package]
+name = "puniyu_skia"
+version = "0.1.0"
+authors = ["wuliya <3369906077@qq.com>"]
+license = "LGPL-3.0-only"
+readme = "README.md"
+homepage = "https://github.com/puniyu/skia"
+repository = "https://github.com/puniyu/skia"
+edition = "2024"
+rust-version = "1.88.0"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+skia-safe = { version = "0.89.0", features = ["embed-freetype", "textlayout"] }
+
+[target.'cfg(not(target_os = "linux"))'.dependencies]
+skia-safe = { version = "0.89.0", features = ["textlayout"] }
