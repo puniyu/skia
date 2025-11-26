@@ -21,7 +21,7 @@ concurrency:
 
 jobs:
   release:
-    if: github.actor != 'puniyu[bot]'
+    if: "!startsWith(github.head_ref, 'release-please')"
     runs-on: ubuntu-latest
     outputs:
       releases_created: ${{ steps.release-please.outputs.releases_created }}
@@ -43,6 +43,7 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    if: "!startsWith(github.head_ref, 'release-please')"
     steps:
       - name: 检出代码
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
@@ -50,12 +51,10 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
           repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
 
-      - name: 设置 Rust 工具链
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: 设置 Rust 缓存
-        uses: swatinem/rust-cache@98c8021b550208e191a6a3145459bfc9fb29c4c0 # v2
+      - name: 设置 rust
+        uses: puniyu/setup-rust@main
         with:
+          save-cache: true
           prefix-key: 'puniyu_skia'
 
       - name: 设置apt 包
@@ -81,12 +80,10 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
           repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
 
-      - name: 设置 Rust 工具链
-        uses: dtolnay/rust-toolchain@stable
-
-      - name: 设置 Rust 缓存
-        uses: swatinem/rust-cache@98c8021b550208e191a6a3145459bfc9fb29c4c0 # v2
+      - name: 设置 rust
+        uses: puniyu/setup-rust@main
         with:
+          save-cache: true
           prefix-key: 'puniyu_skia'
 
       - name: 发布

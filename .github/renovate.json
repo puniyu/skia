@@ -1,5 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>puniyu/.github//.github/renovate"],
-  "enabled": false
+  "packageRules": [
+    {
+      "groupName": "skia-safe",
+      "matchManagers": ["cargo"],
+      "matchPackageNames": ["skia-safe"],
+      "enabled": false
+    }
+  ]
 }
