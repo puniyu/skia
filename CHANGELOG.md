@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/puniyu/skia/compare/v0.3.0...v0.4.0) (2025-12-05)
+
+
+### ✨ 新功能
+
+* **skia:** 启用SVG和WebP支持 ([ad3f057](https://github.com/puniyu/skia/commit/ad3f0571b7ea18b8fce3d1716514f08cba948957))
+
 ## [0.3.0](https://github.com/puniyu/skia/compare/v0.2.0...v0.3.0) (2025-12-05)
 
 
