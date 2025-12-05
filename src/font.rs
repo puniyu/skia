@@ -3,6 +3,7 @@ mod store;
 use std::sync::{LazyLock, RwLock};
 
 use skia_safe::textlayout::{FontCollection, TypefaceFontProvider};
+use skia_safe::FontMgr;
 use thiserror::Error;
 
 #[derive(Debug, Error)]
@@ -38,6 +39,7 @@ impl FontManger {
         let font_provider = TypefaceFontProvider::new();
 
         font_collection.set_asset_font_manager(Some(font_provider.clone().into()));
+        font_collection.set_default_font_manager(FontMgr::new(), None);
 
         Self {
             font_collection,
