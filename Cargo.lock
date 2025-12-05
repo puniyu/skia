@@ -279,7 +279,7 @@ dependencies = [
 
 [[package]]
 name = "puniyu_skia"
-version = "0.2.0"
+version = "0.3.0"
 dependencies = [
  "skia-safe",
  "thiserror",

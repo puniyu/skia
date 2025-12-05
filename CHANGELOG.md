@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0](https://github.com/puniyu/skia/compare/v0.2.0...v0.3.0) (2025-12-05)
+
+
+### ✨ 新功能
+
+* **font:** 设置默认字体管理器 ([86613c8](https://github.com/puniyu/skia/commit/86613c892a95df29789318c73a3ffefa9010b7cf))
+
+
+### 🎡 持续集成
+
+* **workflow:** 添加 apt 包缓存设置 ([a7582e9](https://github.com/puniyu/skia/commit/a7582e9ebc921f5154f35c04a298a256aec0720e))
+
 ## [0.2.0](https://github.com/puniyu/skia/compare/v0.1.0...v0.2.0) (2025-12-05)
 
 
