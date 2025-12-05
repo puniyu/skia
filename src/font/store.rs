@@ -6,25 +6,14 @@ use std::collections::HashMap;
 pub(crate) struct FontStore(HashMap<String, Typeface>);
 
 impl FontStore {
-    /// 插入新字体
-    ///
-    /// # 参数
-    /// - `font_data`: 字体文件的二进制数据
-    /// - `font_family`: 可选的字体族名,如果为 None 则使用字体内置的族名
-    ///
-    pub fn insert(&mut self, font_data: &[u8], font_family: Option<&str>) -> bool {
-        let font_mgr = FontMgr::default();
-
-        if let Some(typeface) = font_mgr.new_from_data(font_data, None) {
-            let family_name = font_family
-                .map(|s| s.to_string())
-                .unwrap_or_else(|| typeface.family_name());
-
-            self.0.insert(family_name, typeface);
-            true
-        } else {
-            false
-        }
+    /// 插入新字体，成功返回字体族名
+    pub fn insert(&mut self, font_data: &[u8], font_family: Option<&str>) -> Option<String> {
+        let typeface = FontMgr::default().new_from_data(font_data, None)?;
+        let family_name = font_family
+            .map(|s| s.to_string())
+            .unwrap_or_else(|| typeface.family_name());
+        self.0.insert(family_name.clone(), typeface);
+        Some(family_name)
     }
 
     /// 移除指定字体族的字体
@@ -41,7 +30,13 @@ impl FontStore {
         self.0.get(font_family)
     }
 
-    pub(crate) fn iter(&self) -> impl Iterator<Item = (&String, &Typeface)> {
+}
+
+impl<'a> IntoIterator for &'a FontStore {
+    type Item = (&'a String, &'a Typeface);
+    type IntoIter = std::collections::hash_map::Iter<'a, String, Typeface>;
+
+    fn into_iter(self) -> Self::IntoIter {
         self.0.iter()
     }
 }

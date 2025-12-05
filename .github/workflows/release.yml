@@ -10,8 +10,6 @@ on:
     paths:
       - 'Cargo.toml'
       - 'src/*'
-    branches-ignore:
-      - 'release-please**'
   workflow_dispatch:
 
 
@@ -61,9 +59,6 @@ jobs:
         uses: awalsh128/cache-apt-pkgs-action@2c09a5e66da6c8016428a2172bd76e5e4f14bb17 # v1
         with:
           packages: pkg-config libssl-dev libfontconfig-dev
-
-      - name: 拉取依赖
-        run: cargo fetch
 
       - name: 单元测试
         run: cargo test

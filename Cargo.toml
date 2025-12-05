@@ -16,3 +16,4 @@ skia-safe = { version = "0.90.0", features = ["embed-freetype", "textlayout"] }
 skia-safe = { version = "0.90.0", features = ["textlayout"] }
 
 [dependencies]
+thiserror = "2"
