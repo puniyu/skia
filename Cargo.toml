@@ -11,10 +11,10 @@ edition = "2024"
 rust-version = "1.88.0"
 
 [target.'cfg(target_os = "linux")'.dependencies]
-skia-safe = { version = "0.90.0", features = ["embed-freetype", "textlayout"] }
+skia-safe = { version = "0.90.0", features = ["embed-freetype", "textlayout", "svg" ,"webp"] }
 
 [target.'cfg(not(target_os = "linux"))'.dependencies]
-skia-safe = { version = "0.90.0", features = ["textlayout"] }
+skia-safe = { version = "0.90.0", features = ["textlayout", "svg", "webp"] }
 
 [dependencies]
 thiserror = "2"
