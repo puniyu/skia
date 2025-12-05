@@ -75,6 +75,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
           repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
 
+      - name: 设置apt 包
+        uses: awalsh128/cache-apt-pkgs-action@2c09a5e66da6c8016428a2172bd76e5e4f14bb17 # v1
+        with:
+          packages: pkg-config libssl-dev libfontconfig-dev
+
       - name: 设置 rust
         uses: puniyu/setup-rust@main
         with:
