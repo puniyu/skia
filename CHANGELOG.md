@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/puniyu/skia/compare/v0.5.0...v0.5.1) (2025-12-06)
+
+
+### 🔧 其他更新
+
+* **deps:** 移除 freetype-woff2 特性依赖 ([c059bc9](https://github.com/puniyu/skia/commit/c059bc92222b53a501042cd2edbd2a38c15053c5))
+
 ## [0.5.0](https://github.com/puniyu/skia/compare/v0.4.1...v0.5.0) (2025-12-06)
 
 
