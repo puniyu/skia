@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/puniyu/skia/compare/v0.4.0...v0.4.1) (2025-12-06)
+
+
+### 🔧 其他更新
+
+* **deps:** 移除 skia-safe 的 svg 和 webp 特性 ([df6bca3](https://github.com/puniyu/skia/commit/df6bca3c9a0208323dd4687e11b766a9fd102e6d))
+
 ## [0.4.0](https://github.com/puniyu/skia/compare/v0.3.0...v0.4.0) (2025-12-05)
 
 
