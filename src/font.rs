@@ -14,8 +14,6 @@ pub enum FontError {
     InvalidFontData,
     #[error("无法获取字体族名")]
     FamilyNameNotFound,
-    #[error("字体族 '{0}' 不存在")]
-    FontNotFound(String),
 }
 
 static FONT_STORE: LazyLock<RwLock<store::FontStore>> =
@@ -68,25 +66,6 @@ impl FontManger {
         } else {
             Err(FontError::FamilyNameNotFound)
         }
-    }
-
-    /// 卸载字体
-    pub fn unregister_font(&mut self, font_family: &str) -> Result<(), FontError> {
-        let mut store = FONT_STORE.write().map_err(|_| FontError::LockFailed)?;
-
-        if !store.remove(font_family) {
-            return Err(FontError::FontNotFound(font_family.to_string()));
-        }
-
-        self.font_provider = TypefaceFontProvider::new();
-        for (family, typeface) in &*store {
-            self.font_provider
-                .register_typeface(typeface.clone(), Some(family.as_str()));
-        }
-        self.font_collection
-            .set_asset_font_manager(Some(self.font_provider.clone().into()));
-
-        Ok(())
     }
 
     pub fn font_collection(&self) -> &FontCollection {
