@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.3](https://github.com/puniyu/skia/compare/v0.5.2...v0.5.3) (2025-12-07)
+
+
+### ♻️ 代码重构
+
+* **font:** 移除字体存储中的remove方法 ([aac5313](https://github.com/puniyu/skia/commit/aac5313a5671902719d6d1a49fc8845f64dfc156))
+* **font:** 移除资产字体管理器设置 ([899aad1](https://github.com/puniyu/skia/commit/899aad118675ca33e456f4ba487fa1d56880a1cb))
+
 ## [0.5.2](https://github.com/puniyu/skia/compare/v0.5.1...v0.5.2) (2025-12-07)
 
 
