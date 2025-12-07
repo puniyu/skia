@@ -16,20 +16,10 @@ impl FontStore {
         Some(family_name)
     }
 
-    /// 移除指定字体族的字体
-    ///
-    /// # 返回
-    /// - `true`: 成功移除
-    /// - `false`: 字体族不存在
-    pub fn remove(&mut self, font_family: &str) -> bool {
-        self.0.remove(font_family).is_some()
-    }
-
     /// 获取指定字体族的字体
     pub(crate) fn get(&self, font_family: &str) -> Option<&Typeface> {
         self.0.get(font_family)
     }
-
 }
 
 impl<'a> IntoIterator for &'a FontStore {
