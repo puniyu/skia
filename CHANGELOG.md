@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.2](https://github.com/puniyu/skia/compare/v0.5.1...v0.5.2) (2025-12-07)
+
+
+### ♻️ 代码重构
+
+* **font:** 移除字体卸载功能及相关错误类型 ([297f92d](https://github.com/puniyu/skia/commit/297f92db950b70231f55af31373b56273f679e00))
+
 ## [0.5.1](https://github.com/puniyu/skia/compare/v0.5.0...v0.5.1) (2025-12-06)
 
 
