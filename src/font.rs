@@ -36,7 +36,6 @@ impl FontManger {
         let mut font_collection = FontCollection::new();
         let font_provider = TypefaceFontProvider::new();
 
-        font_collection.set_asset_font_manager(Some(font_provider.clone().into()));
         font_collection.set_default_font_manager(FontMgr::new(), None);
 
         Self {

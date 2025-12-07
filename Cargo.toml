@@ -10,6 +10,11 @@ repository = "https://github.com/puniyu/skia"
 edition = "2024"
 rust-version = "1.88.0"
 
-[dependencies]
+[target.'cfg(target_os = "linux")'.dependencies]
+skia-safe = { version = "0.90.0", features = ["embed-freetype", "textlayout"] }
+
+[target.'cfg(not(target_os = "linux"))'.dependencies]
 skia-safe = { version = "0.90.0", features = ["textlayout"] }
+
+[dependencies]
 thiserror = "2"
