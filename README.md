@@ -1,2 +1,2 @@
 # skia
-puniyu的skia共享库，用于puniyu应用之间使用
+puniyu的skia字体管理, 封装了字体管理
