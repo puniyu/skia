@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.4](https://github.com/puniyu/skia/compare/v0.5.3...v0.5.4) (2025-12-20)
+
+
+### ♻️ 代码重构
+
+* **font:** 重构字体管理模块 ([11f7e49](https://github.com/puniyu/skia/commit/11f7e4910694af50f1f3bd457cc192df20eb637a))
+
 ## [0.5.3](https://github.com/puniyu/skia/compare/v0.5.2...v0.5.3) (2025-12-07)
 
 
