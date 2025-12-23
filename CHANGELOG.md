@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.5](https://github.com/puniyu/skia/compare/v0.5.4...v0.5.5) (2025-12-23)
+
+
+### 🔧 其他更新
+
+* **ci:** 更新GitHub Actions工作流配置 ([9b42e55](https://github.com/puniyu/skia/commit/9b42e55607299af058b88eae6bfd72c96a8172a1))
+
+
+### ♻️ 代码重构
+
+* **font:** 重构字体管理模块结构 ([90d8493](https://github.com/puniyu/skia/commit/90d84931dee7534fdf38a13f05f8e7877ef805af))
+
 ## [0.5.4](https://github.com/puniyu/skia/compare/v0.5.3...v0.5.4) (2025-12-20)
 
 
